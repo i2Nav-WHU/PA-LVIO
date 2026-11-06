@@ -1,0 +1,31 @@
+{
+    "name": "PA-LVIO",
+    "image": "pa-lvio:latest",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/home/lvio/workspace/src/PA-LVIO,type=bind,consistency=cached",
+    "workspaceFolder": "/home/lvio/workspace/src/PA-LVIO",
+    "runArgs": [
+        "--net",
+        "host",
+        "--gpus",
+        "all"
+    ],
+    "mounts": [
+        {
+            "source": "/media",
+            "target": "/media",
+            "type": "bind"
+        }
+    ],
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "zsh"
+            },
+            "extensions": [
+                "ms-vscode.cpptools-extension-pack",
+                "redhat.vscode-yaml",
+                "redhat.vscode-xml"
+            ]
+        }
+    }
+}

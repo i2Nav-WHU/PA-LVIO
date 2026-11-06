@@ -1,0 +1,11 @@
+<launch>
+    <arg name="configfile" default="" />
+    <arg name="bagfile" default="" />
+
+    <node name="lvio_node" pkg="pa_lvio" type="pa_lvio_ros" args="$(arg configfile) 0" output="screen"
+        required="true">
+        <param name="is_read_bag" value="true" />
+        <param name="bagfile" value="$(arg bagfile)" />
+    </node>
+
+</launch>
